@@ -28,7 +28,6 @@ nav{
   position:fixed;
   width:100%;
   top:0;
-  left:0;
   background:white;
   box-shadow:0 5px 20px rgba(0,0,0,0.05);
   padding:18px 5%;
@@ -38,24 +37,42 @@ nav{
   z-index:1000;
 }
 
-nav div{
-  display:flex;
-  align-items:center;
-  gap:25px;
-}
-  nav a{
-  white-space:nowrap;
-}
-
-
 nav a{
   text-decoration:none;
-  margin-left:30px;
+  margin-left:40px;
   color:#4b5563;
   font-weight:500;
 }
 
 nav a:hover{
+  color:#1f5fae;
+}
+  
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:18px;
+}
+
+.logo-container img{
+  height:35px;
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#4b5563;
+  font-weight:500;
+  white-space:nowrap;
+}
+
+.menu a:hover{
   color:#1f5fae;
 }
 
@@ -76,11 +93,10 @@ nav a:hover{
   transform:translateY(-2px);
 }
 
-
 .agendarcita-btn{
-  background:#22d7e0;
+  background:#0a264a;
 } 
-  
+
 .whatsapp-btn{
   background:#1ebe5d;
 }
@@ -90,7 +106,7 @@ nav a:hover{
 }
   
 .instagram-btn{
-  background:#e34469;
+  background:#cf0a24;
 }
   
   .facebook-btn{
@@ -98,7 +114,11 @@ nav a:hover{
 }
 
   .costos-btn{
-  background:#fffff;
+  background:#ffffff;
+}
+ 
+  .blank-btn{
+  background:#ffffff;
 }
   
 /* HERO NUEVO */
@@ -108,11 +128,11 @@ nav a:hover{
 }
 
 .hero-container{
-  background:background: linear-gradient(
-  145deg,
-  #eef2f7,
-  #ffffff
-);
+  background: linear-gradient(
+    145deg,
+    #eef2f7,
+    #ffffff
+  );
   border-radius:30px;
   padding:60px;
   display:flex;
@@ -120,7 +140,9 @@ nav a:hover{
   justify-content:space-between;
   gap:60px;
   flex-wrap:wrap;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
+
 
 .hero-text{
   flex:1;
@@ -251,8 +273,9 @@ footer{
 }
 
 /* RESPONSIVE */
-@media(max-width:900px){
+@media(max-width:1200px){
   .hero-container{
+    margin: 0 auto;
     flex-direction:column;
     text-align:center;
   }
@@ -266,6 +289,35 @@ footer{
   }
 }
   
+  /* Diseño celular */
+@media (max-width: 768px){
+
+  .hero-container{
+    flex-direction: column;
+    padding: 30px 20px;   /* menos padding */
+  gap:40px;   /* antes 60px */
+}
+
+
+  .hero-img{
+    margin-top: 10px;
+  }
+  .hero-img{
+    margin-left: -30px;
+  }
+  .hero-img img{
+    max-width: 280px;     /* imagen más pequeña en celular */
+  }
+
+  .botones{
+    justify-content: center;
+  }
+
+  .diplomado{
+    margin: 0 auto 20px auto;
+  }
+
+}
 /* ANIMACION SCROLL */
 .section{
   opacity:0;
@@ -283,19 +335,23 @@ footer{
 <body>
 
 <nav>
-  <nav>
-  <div style="display:flex; align-items:center; gap:10px;">
-    <img src="img/logo.png" alt="Logo" style="height:35px;">
+  <!-- Logo + Nombre -->
+  <div class="logo-container">
+    <img src="img/logo.png" alt="Logo">
     <strong>D'Vega Clinic</strong>
   </div>
-  <div>
+
+  <!-- Menú -->
+  <div class="menu">
     <a href="#inicio">Inicio</a>
     <a href="#sobre-mi">Sobre Mí</a>
     <a href="#servicios">Servicios</a>
     <a href="#Horarios-Ubicacion">Ubicación</a>
-    <a href="https://wa.me/528124388568" class="btn">Agendar</a>
+        <a href="#Horarios-Ubicacion"><span style="color:#ffffff;">Lili Steinfeld</span></a>
+
   </div>
 </nav>
+
 
 <!-- INICIO -->
 <section class="section" id="inicio">
@@ -321,7 +377,7 @@ footer{
     </div>
 
     <div class="botones">
-      <a href="https://wa.me/528124388568" class="btn agendarcita-btn">Agendar Cita</a>
+      <a href="https://wa.me/528124388568" class="btn">Agendar Cita</a>
       <a href="https://wa.me/528124388568" class="btn whatsapp-btn">WhatsApp</a>
     </div>
 
@@ -373,10 +429,10 @@ footer{
     </div>
     <div class="card">
       <h3>Valores</h3>
-      <p>-Humanización: rato digno, respetuoso y personalizado.</p>
-        <p>-Calidad y seguridad: Atención integral continua con alos estándares</p>
-        <p>-Innovación: Enfoque en tecnología avanzada  salud digna</p>
-        <p>-Éica y colaboración: rabajo colaborativo, empatia  gesttión ética.</p>
+      <p>-Humanización: Trato digno, respetuoso y personalizado.</p>
+      <p>-Calidad y Seguridad: Atención integral continua con altos estandares.</p>
+    <p>-Innovación: Enoque en tecnología avanzada y salud digna.</p>
+      <p>-Ética y Colaboración: Trabajo colaborativo, empatía y gestión ética.</p>
     </div>
   </div>
 </section>
@@ -384,7 +440,9 @@ footer{
 <!-- SERVICIOS -->
 <section class="section" id="servicios">
   <h2>Servicios</h2>
-  </p>Atención especializada para tu bienestar integral</p>
+<p style="text-align:center; margin-top:-30px; margin-bottom:40px;">
+Atención especializada para tu bienestar integral
+</p>
   <div class="cards">
     <div class="card">
       <h3>Psicología cognitivo conductual </h3>
@@ -408,10 +466,12 @@ footer{
   <!-- HORARIOS -->
 <section class="section" id="Horarios-Ubicacion">
   <h2>Ubicación</h2>
+
   <div class="cards">
+
     <div class="card">
       <h4>Ubicación</h4>
-      <p><strong>José ??</strong></p>
+      <p><strong>Dr. Coss</strong></p>
       <p>José Ma. Coss #426, interior A, Nte</p>
       <p>Col. Centro, C.P. 64000, Monterrey, N.L.</p>
       <br>
@@ -442,7 +502,7 @@ footer{
   <a href="https://wa.me/528124388568" class="btn agendarcita-btn">Agendar Ahora</a>
   <a href="https://wa.me/528124388568" class="btn whatsapp-btn">Enviar WhatsApp</a>
     <h2>Conocenos a través de redes</h2>  <br>
-  <a href="https://wa.me/528124388568" class="btn facebook-btn">Facebook</a>
+  <a href="https://www.facebook.com/share/17qNV8Tscm/" class="btn facebook-btn">Facebook</a>
   <a href="https://www.instagram.com/dvega_clinica_integral?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn instagram-btn">Instagram</a>
 </section>
 
